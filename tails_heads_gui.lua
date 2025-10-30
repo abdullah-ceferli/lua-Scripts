@@ -75,7 +75,7 @@ Tab:CreateButton({
     Name = "Reset Streak",
     Callback = function()
         Streak = 0
-        StreakLabel:ChangeText("Streak: 0")
+        StreakLabel:Set("Streak: 0")
     end
 })
 
@@ -102,7 +102,7 @@ function AutoFlipLoop()
     while AutoGuess and ForceMode do
         Action:FireServer(ForceMode, 1)  -- Bet 1 coin
         Streak += 1
-        StreakLabel:ChangeText("Streak: " .. Streak)
+        StreakLabel:Set("Streak: " .. Streak)
         wait(1.2)  -- Safe delay
     end
 end
